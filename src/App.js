@@ -3,8 +3,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav'
 
 // Views
 import Home from './views/Home'
@@ -17,24 +17,25 @@ class ChatAnonimo extends Component
 
   render() 
   {
-    console.log(`desde la app ${this.state.username}`)
-
     return (
       <Router>
         <div>
-          <ul>
-            <li>
-              <Link to="/">Inicio</Link>
-            </li>
-            <li>
-              <Link to="/categories">Categorías</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">Mis Chats</Link>
-            </li>
-          </ul>
-  
-          <hr />
+          <Nav
+            activeKey="/"
+            className="justify-content-end container bg-dark py-2"
+            onSelect={(selectedKey) => console.log(`selected ${selectedKey}`)}
+          >
+            <Nav.Item>
+              <Nav.Link href="/">Inicio</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/categories">Categorías</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/my-chats">Mis Chats</Nav.Link>
+            </Nav.Item>
+            
+          </Nav>
   
           <Switch>
             <Route exact path="/">
