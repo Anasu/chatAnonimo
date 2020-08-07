@@ -4,13 +4,25 @@ import Display from '../components/Display'
 
 class Home extends Component 
 {
+  constructor(props) {
+    super(props);
+
+    this.state.username = props.username
+
+    console.log(this.state.username)
+  }
   state = {
     username: '',
-    messages: [{input: 'primer mensaje'}],
+    messages: [{
+      input: 'primer mensaje', 
+      nick: 'Alguien'
+    }],
   }
 
 
   handleSubmit = (message) => {
+    message.nick = this.state.username
+
     this.setState({
       messages: [...this.state.messages, message]
     })
@@ -18,8 +30,6 @@ class Home extends Component
 
   render() 
   {
-    const { messages } = this.state
-
     return (
       <div className="container bg-light p-5">
         <h3>Chat General</h3>
