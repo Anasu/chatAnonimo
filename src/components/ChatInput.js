@@ -10,7 +10,8 @@ class ChatInput extends Component
     super(props);
     
     this.initialState = {
-        input: ''
+        'input' : '',
+        'nick' : ''
     };
 
     this.state = this.initialState;
@@ -20,7 +21,8 @@ class ChatInput extends Component
     const { value } = event.target;
 
     this.setState({
-        'input' : value
+        'input' : value,
+        'nick' : ''
       });
   }
 
@@ -47,7 +49,7 @@ class ChatInput extends Component
           variant="primary" 
           type="submit" 
           onClick={this.submitMsg}
-          >Primary</Button>
+          >Enviar</Button>
       </InputGroup>
     )
   }
