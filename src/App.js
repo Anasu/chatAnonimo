@@ -17,26 +17,25 @@ class ChatAnonimo extends Component
 
   render() 
   {
-    console.log(`desde la app ${this.state.username}`)
-
     return (
       <Router>
         <div>
-        <Nav
-          activeKey="/"
-          onSelect={(selectedKey) => console.log(`selected ${selectedKey}`)}
-        >
-          <Nav.Item>
-            <Nav.Link href="/">Inicio</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/categories">Categorías</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/my-chats">Mis Chats</Nav.Link>
-          </Nav.Item>
-          
-        </Nav>
+          <Nav
+            activeKey="/"
+            className="justify-content-end container"
+            onSelect={(selectedKey) => console.log(`selected ${selectedKey}`)}
+          >
+            <Nav.Item>
+              <Nav.Link href="/">Inicio</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/categories">Categorías</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/my-chats">Mis Chats</Nav.Link>
+            </Nav.Item>
+            
+          </Nav>
   
           <Switch>
             <Route exact path="/">
