@@ -22,7 +22,7 @@ class ChatAnonimo extends Component
         <div>
           <Nav
             activeKey="/"
-            className="justify-content-end container"
+            className="justify-content-end container bg-dark py-2"
             onSelect={(selectedKey) => console.log(`selected ${selectedKey}`)}
           >
             <Nav.Item>
